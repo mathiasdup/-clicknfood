@@ -9,6 +9,7 @@ class MealsController < ApplicationController
 
   def index
     @meals = policy_scope(Meal)
+    filter
   end
 
   def update
@@ -35,6 +36,8 @@ class MealsController < ApplicationController
       end
   end
 
+
+
   private
 
   def set_meal
@@ -44,5 +47,10 @@ class MealsController < ApplicationController
 
   def meal_params
     params.require(:meal).permit(:name, :location, :description, :price, :category, :quantity)
+  end
+
+  def filter
+    @meals = @meals.where(location: params[:location]) if params.key? :location
+    @meals = @meals.where(category: params[:category]) if params.key? :category
   end
 end

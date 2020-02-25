@@ -1,2 +1,16 @@
-<h1>Meals#show</h1>
-<p>Find me in app/views/meals/show.html.erb</p>
+<h1><%= @meal.name %></h1>
+<p><%= @meal.description %></p>
+<p>Price: <%= @meal.price %> €</p>
+<p>For <%= @meal.quantity %> people</p>
+<p>Category: <%= @meal.category %></p>
+<p>Location: <%= @meal.location %></p>
+<p>The cook: <%= @meal.user.username %></p>
+
+
+
+  <p><%= link_to meals_path do %>
+    <i class="fas fa-backward">Back to the list</i>
+    <% end %>
+</p>
+
+
