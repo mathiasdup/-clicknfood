@@ -8,7 +8,7 @@ class MealsController < ApplicationController
   end
 
   def index
-    @meals = Meal.all
+    @meals = policy_scope(Meal)
   end
 
   def update
@@ -19,10 +19,13 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
+    authorize @meal
   end
 
   def create
     @meal = Meal.new(meal_params)
+    @meal.user = current_user
+    authorize @meal
     @meal.save
       if @meal.save
         redirect_to meal_path(@meal)
@@ -36,6 +39,7 @@ class MealsController < ApplicationController
 
   def set_meal
     @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
   def meal_params
