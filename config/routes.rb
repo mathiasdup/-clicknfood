@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   resources :meals do
-    resources :orders, only: [:create]
+    resources :orders, only: [:new, :create]
   end
   resources :orders, only: [:show]
 

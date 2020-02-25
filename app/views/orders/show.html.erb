@@ -1,0 +1,11 @@
+<h1>Order <%= @order.id %> Confirmée</h1>
+<p> Recap </p>
+<p><%= @order.meal.name %></p>
+<p>Price: <%= @order.meal.price %> €</p>
+<p>For <%= @order.meal.quantity %> people</p>
+<p>Category: <%= @order.meal.category %></p>
+<p>Location: <%= @order.meal.location %></p>
+<p>The cook: <%= @order.meal.user.username %></p>
+
+
+

@@ -1,21 +1,20 @@
 <h1>List of all the Meals</h1>
 <p> What are you looking for? </p>
-    <%= form_with url: meals_path, local: true, method: :get do |form| %>
+<%= form_with url: meals_path, local: true, method: :get do |form| %>
   <%= form.text_field :location %>
   <%= form.text_field :category %>
   <%= form.submit %>
 <% end %>
-    </div>
 <div class="container bg-lig mt-4">
   <div class="cards">
-  <% @meals.each do |meal| %>
-
-    <%= link_to meal do %>
+    <% @meals.each do |meal| %>
+      <%= link_to meal do %>
         <%= meal.name %>
         <%= meal.location %>
-
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 </div>
+
+
 
