@@ -22,28 +22,33 @@
 <%#meal.price%>
 <%#meal.photo%>
 <div class= "container-cards">
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Sushis</h2>
-          <p>Japanese</p>
-        </div>
-        <h2 class="card-trip-pricing">8.50€</h2>
-      </div>
-    </div>
-
+<% 6.times do %>
+  <% @meals.sample(1).each do |meal| %>
     <div class="card-trip">
       <img src="https://images.unsplash.com/photo-1574343635105-4cf2ea136b8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80">
       <div class="card-trip-infos">
         <div>
-          <h2>Burrito</h2>
-          <p>Mexican</p>
+          <h2><%= meal.name %></h2>
+          <p><%= meal.category %></p>
         </div>
-        <h2 class="card-trip-pricing">11.50€</h2>
+        <div>
+      <h3><%= meal.price %>€</h3>
+      <% end %>
+      </div>
       </div>
     </div>
+ <% end %>
 
+
+
+ <!--  <div class="card-trip">
+    <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=80">
+    <div class="card-trip-infos">
+      <div> -->
+
+
+
+<!--
     <div class="card-trip">
       <img src="https://images.unsplash.com/photo-1515516969-d4008cc6241a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80">
       <div class="card-trip-infos">
@@ -88,3 +93,4 @@
       </div>
     </div>
 </div>
+ -->
