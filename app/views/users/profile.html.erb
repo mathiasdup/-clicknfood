@@ -28,12 +28,12 @@
       <div class="card-product">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
-            <h3><%= order.name %></h3>
-            <p><strong>Description:</strong>&ensp;<%= order.description %></p>
-            <p><strong>Category:</strong>&ensp;<%= order.category %></p>
-            <p><strong>Quantity:</strong>&ensp;<%= order.quantity %></p>
-            <p><strong>Location:</strong>&ensp;<%= order.location %></p>
-            <p><strong>Price:</strong>&ensp;<%= order.price %>€</p>
+            <h3><%= order.meal.name %></h3>
+            <p><strong>Description:</strong>&ensp;<%= order.meal.description %></p>
+            <p><strong>Category:</strong>&ensp;<%= order.meal.category %></p>
+            <p><strong>Quantity:</strong>&ensp;<%= order.meal.quantity %></p>
+            <p><strong>Location:</strong>&ensp;<%= order.meal.location %></p>
+            <p><strong>Price:</strong>&ensp;<%= order.meal.price %>€</p>
         </div>
       </div>
     <% end %>
