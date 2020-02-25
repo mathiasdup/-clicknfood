@@ -5,7 +5,7 @@ class Meal < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: %w(french chinese mexican japanese italian indian lebanese viet) }
   validates :quantity, presence: true, inclusion: { in: 1..10 }
   validates :location, presence: true
   validates :price, presence: true

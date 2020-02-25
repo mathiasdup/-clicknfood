@@ -2,33 +2,93 @@
   <div class="container">
     <h1>Vos voisins vous régale en un clic !</h1>
     <p>Entrez votre adresse pour trouver les voisins à proximité</p>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Rechercher
-      </button>
-      </div>
+    <%= form_with url: meals_path, local: true, method: :get do |form| %>
+      <%= form.text_field :location %>
+      <%= form.submit %>
     <% end %>
   </div>
 </div>
 
 <br>
 
-  <%# @meal.each do |daymeal| %>
-  <%#!!!!! 20 random meal + add css container/grid 5 photo sur une ligne%>
-  <%#meal.name%>
-  <%#meal.description%>
-  <%#meal.price%>
-  <%#meal.photo%>
-
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>Raclette</h2>
-      <p>Fromage savoyard c'est dla bombe bb</p>
+<%# @meal.each do |daymeal| %>
+<%#!!!!! 20 random meal + add css container/grid 5 photo sur une ligne%>
+<%#meal.name%>
+<%#meal.description%>
+<%#meal.price%>
+<%#meal.photo%>
+<div class= "container-cards">
+<% 6.times do %>
+  <% @meals.sample(1).each do |meal| %>
+    <%= link_to meal do %>
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1574343635105-4cf2ea136b8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= meal.name %></h2>
+          <p><%= meal.category %></p>
+        </div>
+        <div>
+      <h3><%= meal.price %>€</h3>
+      <% end %>
+      </div>
+      </div>
     </div>
-    <h2 class="card-trip-pricing">7.50€</h2>
-  </div>
+    <% end %>
+ <% end %>
+
+
+
+ <!--  <div class="card-trip">
+    <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=80">
+    <div class="card-trip-infos">
+      <div> -->
+
+
+
+<!--
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1515516969-d4008cc6241a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Pasta and Meetball</h2>
+          <p>Italian</p>
+        </div>
+        <h2 class="card-trip-pricing">9.50€</h2>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Pizza</h2>
+          <p>Italian</p>
+        </div>
+        <h2 class="card-trip-pricing">11.50€</h2>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Salade composée</h2>
+          <p>Healthy</p>
+        </div>
+        <h2 class="card-trip-pricing">10.50€</h2>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1523475886877-7cc3b40b8093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2>Frites</h2>
+          <p>Belgian</p>
+        </div>
+        <h2 class="card-trip-pricing">8.50€</h2>
+      </div>
+    </div>
 </div>
+ -->

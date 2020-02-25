@@ -5,5 +5,19 @@ class OrderPolicy < ApplicationPolicy
     end
   end
 
-  # ACTION A DEFINIR ICI BESOIN DE CONTROLLER ORDER AVANT
+  def show?
+    true
+  end
+
+  def create?
+    true
+  end
+
+  def update?
+    false
+  end
+
+  def destroy?
+    false
+  end
 end
