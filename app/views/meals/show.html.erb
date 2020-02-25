@@ -6,11 +6,15 @@
 <p>Location: <%= @meal.location %></p>
 <p>The cook: <%= @meal.user.username %></p>
 
-
-
-  <p><%= link_to meals_path do %>
-    <i class="fas fa-backward">Back to the list</i>
-    <% end %>
+<p>
+  <%= link_to meals_path do %>
+  <i class="fas fa-backward">Back to the list</i>
+  <% end %>
 </p>
 
+<p>
+  <%= form_with url: meal_orders_path(@meal), local: true, method: :post do |form| %>
+    <%= form.submit "Order this meal", class: "btn-primary", name:"Order this meal" %>
+  <% end %>
+</p>
 
