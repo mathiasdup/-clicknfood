@@ -1,5 +1,7 @@
 class MealsController < ApplicationController
    before_action :set_meal, only: [:show, :edit, :update, :destroy]
+   skip_before_action :authenticate_user!, only: [:index, :show]
+
 
   def show
   end
@@ -46,7 +48,7 @@ class MealsController < ApplicationController
   end
 
   def meal_params
-    params.require(:meal).permit(:name, :location, :description, :price, :category, :quantity)
+    params.require(:meal).permit(:name, :location, :description, :price, :category, :quantity, :photo)
   end
 
   def filter

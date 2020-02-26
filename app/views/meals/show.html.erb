@@ -1,20 +1,49 @@
-<h1><%= @meal.name %></h1>
-<p><%= @meal.description %></p>
-<p>Price: <%= @meal.price %> €</p>
-<p>For <%= @meal.quantity %> people</p>
-<p>Category: <%= @meal.category %></p>
-<p>Location: <%= @meal.location %></p>
-<p>The cook: <%= @meal.user.username %></p>
+<div class="totale">
+  <div class="global">
+    <div class= "half-one">
+      <h1><%= @meal.name.capitalize %></h1>
+      <p><%= @meal.description %></p>
+      <p>For <%= @meal.quantity %> people</p>
+      <p>Category: <%= @meal.category %></p>
+      <p><img src="https://img.icons8.com/wired/24/000000/user-location.png"> <%= @meal.location.capitalize %></p>
 
-<p>
-  <%= link_to meals_path do %>
-  <i class="fas fa-backward">Back to the list</i>
-  <% end %>
-</p>
+      <h4>Price: <%= @meal.price %> €</h4>
 
-<p>
-  <%= form_with url: meal_orders_path(@meal), local: true, method: :post do |form| %>
-    <%= form.submit "Order this meal", class: "btn-primary", name:"Order this meal" %>
-  <% end %>
-</p>
 
+      <p>
+        <%= link_to meals_path do %>
+        <i class="fas fa-backward">Back to the list</i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= form_with url: meal_orders_path(@meal), local: true, method: :post do |form| %>
+        <%= form.submit "Order this meal", class: "btn-light", name:"Order this meal" %>
+        <% end %>
+      </p>
+
+    </div>
+
+    <div class= "half-two">
+
+      <div class="meal-picture">
+        <% if @meal.photo.attached? %>
+          <%= cl_image_tag @meal.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+
+      <div class="cooker">
+
+        <div class="avatar-cooker">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80">
+        </div>
+
+        <div class="nom-cooker">
+          <p>Your cook is <%= @meal.user.username %></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

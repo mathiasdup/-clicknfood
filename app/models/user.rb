@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :orders
   has_many :meals
+  # has_one_attached :photo
 
   validates :username, presence: true, uniqueness: true
   validates :address, presence: true
