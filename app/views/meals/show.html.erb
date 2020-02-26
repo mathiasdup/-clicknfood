@@ -1,5 +1,8 @@
 <h1><%= @meal.name %></h1>
 <p><%= @meal.description %></p>
+<% if @meal.photo.attached? %>
+<%= cl_image_tag @meal.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <p>Price: <%= @meal.price %> €</p>
 <p>For <%= @meal.quantity %> people</p>
 <p>Category: <%= @meal.category %></p>
