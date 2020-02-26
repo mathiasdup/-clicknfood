@@ -20,11 +20,20 @@ Order.destroy_all
   )
   qwerty.save!
 
+  kevcha = User.new(
+    username: "kevcha",
+    email: "kevcha@test.com",
+    address: "St Etienne",
+    password: "kevcha",
+  )
+  kevcha.save!
+
+
 puts 'Creating meals...'
 file_b = URI.open('https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?cs=srgb&dl=aliments-burrito-citron-vert-dejeuner-461198.jpg&fm=jpg')
   burritos = Meal.new(
     name: "Burritos",
-    description: "con carne",
+    description: "Flour tortilla wrapped around beef, beans, guacamole, salsa sauce.",
     price: 40,
     location: "lyon",
     quantity: 4,
@@ -37,7 +46,7 @@ file_b = URI.open('https://images.pexels.com/photos/461198/pexels-photo-461198.j
 file_s = URI.open('https://images.pexels.com/photos/1148086/pexels-photo-1148086.jpeg?cs=srgb&dl=aliments-bokeh-bon-vivant-brouiller-1148086.jpg&fm=jpg')
  sushi = Meal.new(
     name: "Sushi",
-    description: "with salmon",
+    description: "Vinegar rice with salmon or shrimps",
     price: 80,
     location: "lyon",
     category: "japanese",
@@ -50,7 +59,7 @@ file_s = URI.open('https://images.pexels.com/photos/1148086/pexels-photo-1148086
 file_bu = URI.open('https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?cs=srgb&dl=burger-collation-delicieux-en-cas-1639565.jpg&fm=jpg')
  burger = Meal.new(
     name: "Burger",
-    description: "XXL",
+    description: "Beef burger with tomato, cheddar and fried onions",
     price: 10,
     location: "New York",
     category: "french",
@@ -68,7 +77,7 @@ file_ch = URI.open('https://images.pexels.com/photos/3734026/pexels-photo-373402
     location: "Dijon",
     category: "french",
     quantity: 1,
-    user: qwerty
+    user: kevcha
   )
   chocolate.photo.attach(io: file_ch, filename: 'chocolate.jpg', content_type: 'image/jpg')
   chocolate.save!
@@ -89,7 +98,7 @@ file_ph = URI.open('https://images.pexels.com/photos/1001773/pexels-photo-100177
 file_pi = URI.open('https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?cs=srgb&dl=aliments-croute-dejeuner-delicieux-2619967.jpg&fm=jpg')
  pizza = Meal.new(
     name: "Pizza",
-    description: "à l'italienne",
+    description: "Delicious tomato and mozzarella pizza",
     price: 20,
     location: "Milano",
     category: "italian",
