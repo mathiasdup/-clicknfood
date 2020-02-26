@@ -1,56 +1,78 @@
   <br>
-  <div class="container">
-    <h2>My prepared meals</h2>
-    <br>
-    <% @user.meals.each do |meal| %>
-      <div class="card-product">
-      <img src="https://images.unsplash.com/photo-1581693363882-3f6df5c2b3f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80" />
-        <div class="card-product-infos">
-            <h3><%= meal.name %></h3>
-            <p><strong>Description:</strong>&ensp;<%= meal.description %></p>
-            <p><strong>Category:</strong>&ensp;<%= meal.category %></p>
-            <p><strong>Quantity:</strong>&ensp;<%= meal.quantity %></p>
-            <p><strong>Location:</strong>&ensp;<%= meal.location %></p>
-            <p><strong>Price:</strong>&ensp;<%= meal.price %>€</p>
-            <%= link_to 'check my dish', meal %>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
       </div>
-      <br>
-    <% end %>
+      <div class="col-7">
+        <h2>My prepared meals</h2>
+        <br>
+        <% @user.meals.each do |meal| %>
+          <div class="card">
+            <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1581693363882-3f6df5c2b3f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80);">
+              <div class="overlay">
+                <div class="overlay-content">
+                  <a href="/meals.id">See more</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <a href="#!">
+              <h2><%= meal.name %></h2>
+              <p>Category:&ensp;<strong><%= meal.category %></strong></p>
+                <div class="d-flex justify-content-between">
+                <p>Quantity:&ensp;<strong><%= meal.quantity %></strong></p>
+                <h4><strong><%= meal.price %>€</strong></h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-2">
+        <br>
+ <div class="card pmd-card text-center">
+    <div class="card-body">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="150" height="150" class="rounded-circle img-fluid mb-3" title="" alt="">
+        <h2 class="card-title">My infos</h2>
+        <br>
+        <p><strong>My username:</strong>&ensp;<%= @user.username %></p>
+        <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
+        <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
+    </div>
+</div>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
   </div>
 
   <br>
 
-  <div class="container">
-    <h2>My orders</h2>
-    <br>
-    <% @user.orders.each do |order| %>
-      <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-            <h3><%= order.meal.name %></h3>
-            <p><strong>Description:</strong>&ensp;<%= order.meal.description %></p>
-            <p><strong>Category:</strong>&ensp;<%= order.meal.category %></p>
-            <p><strong>Quantity:</strong>&ensp;<%= order.meal.quantity %></p>
-            <p><strong>Location:</strong>&ensp;<%= order.meal.location %></p>
-            <p><strong>Price:</strong>&ensp;<%= order.meal.price %>€</p>
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
       </div>
-    <% end %>
-  </div>
-
-  <br>
-
-  <div class="container">
-    <h2>My infos</h2>
-    <br>
-      <div class="card-product">
-        <div class="card-product-infos">
-          <p><strong>My username:</strong>&ensp;<%= @user.username %></p>
+        <div class="col-7">
+          <h2>My orders</h2>
           <br>
-          <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
-          <br>
-          <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
+          <% @user.orders.each do |order| %>
+            <div class="card-product">
+            <img src="https://images.unsplash.com/photo-1499125562588-29fb8a56b5d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" />
+              <div class="card-product-infos">
+                <h3><%= order.meal.name %></h3>
+                <p>Description:&ensp;<strong><%= order.meal.description %></strong></p>
+                <p>Category:&ensp;<strong><%= order.meal.category %></strong></p>
+                <p>Quantity:&ensp;<strong><%= order.meal.quantity %></strong></p>
+                <p>Location:&ensp;<strong><%= order.meal.location %></strong></p>
+                <p>Price:&ensp;<strong><%= order.meal.price %>€</strong></p>
+              </div>
+            </div>
+            <br>
+          <% end %>
         </div>
-      </div>
+    </div>
+    <div class="col-3">
+    </div>
   </div>
