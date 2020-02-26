@@ -52,7 +52,7 @@ class MealsController < ApplicationController
   end
 
   def filter
-    @meals = @meals.where(location: params[:location]) if params.key? :location
-    @meals = @meals.where(category: params[:category]) if params.key? :category
+    @meals = @meals.where(location: params[:location]) if params[:location].present?
+    @meals = @meals.where(category: params[:category]) if params[:category].present?
   end
 end
