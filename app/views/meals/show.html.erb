@@ -27,7 +27,9 @@
     <div class= "half-two">
 
       <div class="meal-picture">
-        <img src="https://images.unsplash.com/photo-1515316941871-2f69c7f2e5a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" alt="sushis">
+        <% if @meal.photo.attached? %>
+          <%= cl_image_tag @meal.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
       </div>
 
       <div class="cooker">
@@ -45,4 +47,3 @@
 
   </div>
 </div>
-

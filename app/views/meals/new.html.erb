@@ -8,6 +8,7 @@
   <%= f.input :location %>
   <%= f.input :price, :input_html => { type: "number" } %>
   <%= f.input :quantity, collection: 1..10 %>
+  <%= f.input :photo, as: :file %>
 
   <%= f.button :submit, class: "btn-primary" %>
 <% end %>
