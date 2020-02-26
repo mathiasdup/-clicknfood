@@ -26,3 +26,16 @@
     outline: none;
   }
 }
+.search-bar select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  border: none;
+  text-align: center;
+  width: 15%;
+  background: white;
+  color: #EF2D56;
+  &:focus{
+    outline: none;
+  }
+}
