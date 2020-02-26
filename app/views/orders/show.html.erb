@@ -1,14 +1,26 @@
-<h1>Order <%= @order.id %> Confirmée</h1>
-<p> Recap </p>
-<p><%= @order.meal.name %></p>
-<% if @order.meal.photo.attached? %>
-  <%= cl_image_tag @order.meal.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<p>Price: <%= @order.meal.price %> €</p>
-<p>For <%= @order.meal.quantity %> people</p>
-<p>Category: <%= @order.meal.category %></p>
-<p>Location: <%= @order.meal.location %></p>
-<p>The cook: <%= @order.meal.user.username %></p>
+<div class="ordered-container">
+  <div class="ordered-card">
+    <h1>Everything went well !</h1>
+    <h3>You ordered some delicious <%= @order.meal.name %></h3>
+    <div class="intern-container">
+      <div class="infos">
+        <p>
+          For <%= @order.meal.quantity %> people <br>
+          Category: <%= @order.meal.category %> <br>
+          Location: <%= @order.meal.location %> <br>
+          The cook: <%= @order.meal.user.username %> <br>
+        </p>
+      </div>
+      <div class="price">
+        <h3><%= @order.meal.price %> €</h3>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
+
+<%# <% if @order.meal.photo.attached? %>
+<%# <%= cl_image_tag @order.meal.photo.key, height: 300, width: 400, crop: :fill %>
+<%# <% end %>
