@@ -4,31 +4,37 @@
     <p>Choose a category to filter</p>
     <%= form_with url: meals_path, local: true, method: :get do |form| %>
     <div class="search-bar">
-      <%= form.text_field :location, value: @meals.first.location, class:"search-input" %>
+      <%= form.text_field :location, value: params[:location], class:"search-input" %>
       <%= form.select :category, ["french", "chinese", "mexican", "japanese", "italian", "indian", "lebanese", "viet"] %>
       <%= form.submit class:"search-button", value:"Search" %>
     <% end %>
     </div>
   </div>
 </div>
-<h1 class="city">All meals in <%= @meals.first.location.capitalize %> :</h1>
-<div class= "container-cards">
-  <% @meals.each do |meal| %>
-    <%= link_to meal do %>
-    <div class="card-trip">
-      <% if meal.photo.attached? %>
-        <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= meal.name %></h2>
-          <p><%= meal.category %></p>
+
+<% if @meals.present? %>
+  <h1 class="city">All meals in <%= @meals.first.location.capitalize %> :</h1>
+  <div class= "container-cards">
+    <% @meals.each do |meal| %>
+      <%= link_to meal do %>
+      <div class="card-trip">
+        <% if meal.photo.attached? %>
+          <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= meal.name %></h2>
+            <p><%= meal.category %></p>
+          </div>
+          <div>
+        <h3><%= meal.price %>€</h3>
+        <% end %>
         </div>
-        <div>
-      <h3><%= meal.price %>€</h3>
-      <% end %>
+        </div>
       </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+
+<% else %>
+  <h2>Sorry, there is no results for your research !</h2>
+<% end %>
