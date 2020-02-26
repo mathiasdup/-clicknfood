@@ -9,7 +9,7 @@
       </div>
 
       <div class="cooker">
-        <img src="https://avatars3.githubusercontent.com/u/472453?s=400&v=4" width="70" height="70" id="avatar">
+      <%= cl_image_tag user_avatar(@meal.user, 350), height: 70, width: 70, crop: :fill, id: "avatar" %>
         <p>Your meal will be cooked by <%= @meal.user.username.capitalize %></p>
       </div>
 
