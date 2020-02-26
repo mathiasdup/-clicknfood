@@ -8,10 +8,12 @@
         <br>
         <% @user.meals.each do |meal| %>
           <div class="card">
-            <div class="card-img" style="background-image:url(https://images.unsplash.com/photo-1581693363882-3f6df5c2b3f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80);">
+            <div class="card-img" style="background-image:url('<%= cl_image_path meal.photo.key %>');">
               <div class="overlay">
                 <div class="overlay-content">
-                  <a href="/meals.id">See more</a>
+                  <%= link_to meal do %>
+                  <p> See More </p>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -59,7 +61,10 @@
           <br>
           <% @user.orders.each do |order| %>
             <div class="card-product">
-            <img src="https://images.unsplash.com/photo-1499125562588-29fb8a56b5d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" />
+              <% if order.meal.photo.attached? %>
+                <%= cl_image_tag order.meal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+            <!-- <img src="https://images.unsplash.com/photo-1499125562588-29fb8a56b5d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" /> -->
               <div class="card-product-infos">
                 <h3><%= order.meal.name %></h3>
                 <p>Description:&ensp;<strong><%= order.meal.description %></strong></p>
@@ -67,6 +72,9 @@
                 <p>Quantity:&ensp;<strong><%= order.meal.quantity %></strong></p>
                 <p>Location:&ensp;<strong><%= order.meal.location %></strong></p>
                 <p>Price:&ensp;<strong><%= order.meal.price %>€</strong></p>
+                <%= link_to order do %>
+                  <p>Show Recap </p>
+                  <% end %>
               </div>
             </div>
             <br>
