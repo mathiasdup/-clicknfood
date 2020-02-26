@@ -48,7 +48,7 @@ class MealsController < ApplicationController
   end
 
   def meal_params
-    params.require(:meal).permit(:name, :location, :description, :price, :category, :quantity)
+    params.require(:meal).permit(:name, :location, :description, :price, :category, :quantity, :photo)
   end
 
   def filter
