@@ -1,12 +1,20 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   width: 25%;
   height: 15em;
   margin: 2%;
   border-radius: 5px;
+  transition: 0.4s;
 }
+
+.card-trip:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: 2px 2px 10px 5px rgba(0,0,0,0.25),
+    5px 5px 30px 15px rgba(0,0,0,0.22);
+}
+
 .card-trip img {
   object-fit: cover;
   text-align: center;
@@ -24,6 +32,9 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+}
+#cardpaddingprofil {
+  padding: 8px;
 }
 .card-trip .card-trip-infos {
   padding: 16px;
