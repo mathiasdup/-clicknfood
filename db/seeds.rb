@@ -23,10 +23,26 @@ Order.destroy_all
   kevcha = User.new(
     username: "kevcha",
     email: "kevcha@test.com",
-    address: "St Etienne",
+    address: "Saint-Etienne",
     password: "kevcha",
   )
   kevcha.save!
+
+  benj = User.new(
+    username: "benj",
+    email: "benjamin@test.com",
+    address: "Lyon",
+    password: "benjamin",
+  )
+  benj.save!
+
+  jojo = User.new(
+    username: "jojo",
+    email: "jojo@test.com",
+    address: "Lyon",
+    password: "jojojo",
+  )
+  jojo.save!
 
 
 puts 'Creating meals...'
