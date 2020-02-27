@@ -65,10 +65,11 @@
                 <%= cl_image_tag user_avatar(current_user, 350), height: 150, width: 150, crop: :fill, class: "rounded-circle img-fluid mb-3" %>
               <h2 class="card-title">My infos</h2>
               <br>
-              <p><strong>My username:</strong>&ensp;<%= @user.username %></p>
-              <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
-              <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
+              <p class="paragrapheprofil"><strong>My username:</strong>&ensp;<%= @user.username %></p>
+              <p class="paragrapheprofil"><strong>My address:</strong>&ensp;<%= @user.address %></p>
+              <p class="paragrapheprofil"><strong>My email:</strong>&ensp;<%= @user.email %></p>
               <%= link_to edit_user_registration_path(@user) do %>
+              <br>
                <p>Edit my profile</p>
               <% end %>
             </div>
