@@ -61,3 +61,63 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+// --------------------
+// INDEX
+// --------------------
+
+.card-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 15em;
+  border-radius: 5px;
+  transition: 0.4s;
+  
+}
+
+.card-index:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: 2px 2px 10px 5px rgba(0,0,0,0.25),
+    5px 5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.card-index img {
+  object-fit: cover;
+  text-align: center;
+  height: 70%;
+  width: 100%;
+
+}
+.card-index h2 {
+  height:30%;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.card-index p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+#cardpaddingprofil {
+  padding: 8px;
+}
+.card-index .card-index-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+.card-index-infos h3 {
+  position: relative;
+  right: 16px;
+  width: 40px;
+}
+
+.card-index a{
+  text-decoration: none;
+  color: black;
+}
