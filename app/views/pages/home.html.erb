@@ -2,9 +2,9 @@
   <div class="container">
     <h1>Your neighbours <br> make your food great again !</h1>
     <p>Enter your city to discover some awesome food</p>
-    <%= form_with url: meals_path, local: true, method: :get do |form| %>
+    <%= form_with url: meals_path, html: {class: "algolia-form"}, local: true, method: :get do |form| %>
       <div class="search-bar">
-        <%= form.text_field :location, class:"search-input", placeholder:"A beautiful city"%>
+        <%= form.text_field :location, class:"search-input", placeholder:"A beautiful city", data: {toto: "titi"}%>
         <%= form.submit class:"search-button", value:"Search"%>
       </div>
     <% end %>
@@ -21,7 +21,7 @@
       <% if meal.photo.attached? %>
         <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <div class="card-trip-infos">
+      <div class="card-trip-infos" data-id='<%= meal.id %>'>
         <div>
           <h2><%= meal.name %></h2>
           <p><%= meal.category %></p>
