@@ -5,7 +5,7 @@ const cardsContainer = document.querySelector('.container-cards');
 
 
 const displaySearch = (data) => {
-  const cards = document.querySelectorAll('.card-trip');
+  const cards = document.querySelectorAll('.card-trip-algolia');
   cards.forEach((card) =>  {
     card.classList.add("hidden-search");
     data.forEach((element) => {

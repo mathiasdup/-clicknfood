@@ -3,7 +3,7 @@
   <div class="left-menu">
   <%= form_with url: meals_path, html: {class: "algolia-form"}, local: true, class:"form-index", method: :get do |form| %>
   <div class="search-bar-index">
-    <%= form.text_field :location, value: params[:location], class:"search-input" %>
+    <%= form.text_field :location, class:"search-input" %>
     <%= form.submit class:"search-button", value:"Search" %>
   </div>
     <%= form.select :category, ["french", "chinese", "mexican", "japanese", "italian", "indian", "lebanese", "viet"] %>
@@ -14,7 +14,7 @@
 <div class="right-side">
   <div class= "container-cards-index">
     <% @meals.each do |meal| %>
-    <div class="card-trip" data-id='<%= meal.id %>'>
+    <div class="card-trip-algolia" data-id='<%= meal.id %>'>
     <%= link_to meal do %>
       <% if meal.photo.attached? %>
       <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
