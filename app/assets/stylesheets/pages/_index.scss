@@ -2,7 +2,12 @@
 @import "home";
 
 .city{
-  margin: 3% 0 0 10%;
+  align-self: end;
+
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .hidden-search{

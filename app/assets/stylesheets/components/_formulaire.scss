@@ -17,3 +17,29 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+// NE PAS TOUCHER AU DESSUS /GEM DEVISE/ MATHIAS
+
+.send-button{
+background: #EF2D56;
+width:100%;
+font-weight: 600;
+color:#fff;
+padding: 8px 25px;
+
+&:hover {
+color:#fff;
+  }
+}
+
+.my-input{
+cursor: text;
+padding: 8px 10px;
+transition: border .1s linear;
+border:none;
+border-radius: 5px;
+
+&:focus {
+  box-shadow: 0 0 10px rgba(239, 45, 86, 0.4);
+  }
+}

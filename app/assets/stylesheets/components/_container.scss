@@ -1,8 +1,22 @@
 .container-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  margin: 3% auto 5% auto;
+  width: 70%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: min-content;
+  grid-column-gap: 3%;
+  grid-row-gap: 5%;
+}
+
+.container-cards-index {
+  display: grid;
   width: 100%;
-  justify-content: center;
+  height: 100%;
+  padding-right: 5%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: min-content;
+  grid-column-gap: 2%;
+  grid-row-gap: 15px;
 }
 
 .ordered-container {
@@ -21,4 +35,28 @@
     height: 70%;
     width: 100%;
   }
+}
+
+.full-container{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 3fr 8fr;
+  grid-template-rows: 1fr 8fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}
+
+.right-side{
+  width: 80%;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.bottom-side{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }

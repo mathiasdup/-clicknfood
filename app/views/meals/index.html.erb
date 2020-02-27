@@ -1,41 +1,41 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1560035285-64808ba47bda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3122&q=80);">
-  <div class="container">
-    <h1>Find your happiness near to you !</h1>
-    <p>Choose a category to filter</p>
-    <%= form_with url: meals_path, html: {class: "algolia-form"}, local: true, method: :get do |form| %>
-    <div class="search-bar">
-      <%= form.text_field :location, value: params[:location], class:"search-input" %>
-      <%= form.select :category, ["french", "chinese", "mexican", "japanese", "italian", "indian", "lebanese", "viet"] %>
-      <%= form.submit class:"search-button", value:"Search" %>
-    <% end %>
-    </div>
-  </div>
-</div>
 
+<div class="full-container">
+  <div class="left-menu">
+  <%= form_with url: meals_path, html: {class: "algolia-form"}, local: true, class:"form-index", method: :get do |form| %>
+  <div class="search-bar-index">
+    <%= form.text_field :location, value: params[:location], class:"search-input" %>
+    <%= form.submit class:"search-button", value:"Search" %>
+  </div>
+    <%= form.select :category, ["french", "chinese", "mexican", "japanese", "italian", "indian", "lebanese", "viet"] %>
+    <% end %>
+</div>
 <% if @meals.present? %>
-  <h1 class="city">All meals in <%= @meals.first.location.capitalize %> :</h1>
-  <div class= "container-cards">
+<h1 class="city">All meals in <%= @meals.first.location.capitalize %> :</h1>
+<div class="right-side">
+  <div class= "container-cards-index">
     <% @meals.each do |meal| %>
-      <%= link_to meal do %>
-      <div class="card-trip" data-id='<%= meal.id %>'>
-        <% if meal.photo.attached? %>
-          <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= meal.name %></h2>
-            <p><%= meal.category %></p>
-            <p><%= meal.location %></p>
-          </div>
-          <div>
-        <h3><%= meal.price %>€</h3>
-        <% end %>
+    <div class="card-trip" data-id='<%= meal.id>
+    <%= link_to meal do %>
+      <% if meal.photo.attached? %>
+      <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div class="card-index-infos">
+        <div>
+          <h2><%= meal.name %></h2>
+          <p><%= meal.category %></p>
+          <p><%= meal.location %></p>
         </div>
+        <div>
+          <h3><%= meal.price %>€</h3>
+          <% end %>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 
-<% else %>
+  <% else %>
   <h2>Sorry, there is no results for your research !</h2>
-<% end %>
+  <% end %>
+</div>
+</div>

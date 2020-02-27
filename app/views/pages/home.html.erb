@@ -12,22 +12,15 @@
 </div>
 
 <br>
-
-<%# @meal.each do |daymeal| %>
-<%#!!!!! 20 random meal + add css container/grid 5 photo sur une ligne%>
-<%#meal.name%>
-<%#meal.description%>
-<%#meal.price%>
-<%#meal.photo%>
+<div class="bottom-side">
 <div class= "container-cards">
 <% 6.times do %>
   <% @meals.sample(1).each do |meal| %>
+  <div class="card-trip">
     <%= link_to meal do %>
-    <div class="card-trip">
       <% if meal.photo.attached? %>
         <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <!-- <img src="https://images.unsplash.com/photo-1574343635105-4cf2ea136b8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"> -->
       <div class="card-trip-infos" data-id='<%= meal.id %>'>
         <div>
           <h2><%= meal.name %></h2>
@@ -41,59 +34,4 @@
     </div>
     <% end %>
  <% end %>
-
-
-
- <!--  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=80">
-    <div class="card-trip-infos">
-      <div> -->
-
-
-
-<!--
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1515516969-d4008cc6241a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Pasta and Meetball</h2>
-          <p>Italian</p>
-        </div>
-        <h2 class="card-trip-pricing">9.50€</h2>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Pizza</h2>
-          <p>Italian</p>
-        </div>
-        <h2 class="card-trip-pricing">11.50€</h2>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Salade composée</h2>
-          <p>Healthy</p>
-        </div>
-        <h2 class="card-trip-pricing">10.50€</h2>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1523475886877-7cc3b40b8093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Frites</h2>
-          <p>Belgian</p>
-        </div>
-        <h2 class="card-trip-pricing">8.50€</h2>
-      </div>
-    </div>
 </div>
- -->
