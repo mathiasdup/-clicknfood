@@ -2,9 +2,9 @@
   <div class="container">
     <h1>Your neighbours <br> make your food great again !</h1>
     <p>Enter your city to discover some awesome food</p>
-    <%= form_with url: meals_path, local: true, method: :get do |form| %>
+    <%= form_with url: meals_path, html: {class: "algolia-form"}, local: true, method: :get do |form| %>
       <div class="search-bar">
-        <%= form.text_field :location, class:"search-input", placeholder:"A beautiful city"%>
+        <%= form.text_field :location, class:"search-input", placeholder:"A beautiful city", data: {toto: "titi"}%>
         <%= form.submit class:"search-button", value:"Search"%>
       </div>
     <% end %>

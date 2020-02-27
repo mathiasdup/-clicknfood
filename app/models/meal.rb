@@ -1,4 +1,6 @@
 class Meal < ApplicationRecord
+  include AlgoliaSearch
+
   has_many :orders
   belongs_to :user
   has_one_attached :photo
@@ -9,4 +11,10 @@ class Meal < ApplicationRecord
   validates :quantity, presence: true, inclusion: { in: 1..10 }
   validates :location, presence: true
   validates :price, presence: true
+
+
+  algoliasearch do
+    attributes :location, :category
+  end
+
 end
