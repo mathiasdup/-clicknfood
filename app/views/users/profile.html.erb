@@ -4,7 +4,9 @@
       <div class="col-2">
       </div>
       <div class="col-6">
+        <br>
         <h2>My prepared meals</h2>
+        <br>
       </div>
       <div class="col-4">
       </div>
@@ -33,34 +35,7 @@
             </div>
           <% end %>
         </div>
-      </div>
-        <div class="col-4">
-          <br>
-          <div class="card pmd-card text-center border-0">
-            <div class="card-body">
-                <%= cl_image_tag user_avatar(current_user, 350), height: 150, width: 150, crop: :fill, class: "rounded-circle img-fluid mb-3" %>
-              <h2 class="card-title">My infos</h2>
-              <br>
-              <p><strong>My username:</strong>&ensp;<%= @user.username %></p>
-              <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
-              <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
-              <%= link_to edit_user_registration_path(@user) do %>
-               <p>Edit my profile</p>
-              <% end %>
-            </div>
-          </div>
-        </div>
-       </div>
-    </div>
-
-
-
-  <br>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-7">
+        <br>
         <h2>My orders</h2>
         <br>
         <% @user.orders.each do |order| %>
@@ -84,7 +59,20 @@
           <br>
         <% end %>
       </div>
+        <div class="col-4">
+          <div class="card pmd-card text-center border-0 m-0">
+            <div class="card-body">
+                <%= cl_image_tag user_avatar(current_user, 350), height: 150, width: 150, crop: :fill, class: "rounded-circle img-fluid mb-3" %>
+              <h2 class="card-title">My infos</h2>
+              <br>
+              <p><strong>My username:</strong>&ensp;<%= @user.username %></p>
+              <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
+              <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
+              <%= link_to edit_user_registration_path(@user) do %>
+               <p>Edit my profile</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+       </div>
     </div>
-    <div class="col-3">
-    </div>
-  </div>
