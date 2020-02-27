@@ -1,16 +1,19 @@
+body{
+  display: flex;
+  flex-direction: column;
+}
 .footer {
   background: #FFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10%;
+  height: 3em;
   width: 100%;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   margin-top: 16px;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
-
-
+  margin-top: auto;
 }
 .footer-links {
   display: flex;
