@@ -14,7 +14,7 @@ class Meal < ApplicationRecord
 
 
   algoliasearch do
-    attributes :location, :category
+    attributes :location, :category, :name
   end
 
 end
