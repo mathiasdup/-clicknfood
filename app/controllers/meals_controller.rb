@@ -29,6 +29,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
     @meal.user = current_user
     authorize @meal
+    @meal.location.downcase!
     @meal.save
       if @meal.save
         redirect_to meal_path(@meal)
@@ -53,6 +54,8 @@ class MealsController < ApplicationController
 
   def filter
     @meals = @meals.where(location: params[:location].downcase) if params[:location].present?
-    @meals = @meals.where(category: params[:category]) if params[:category].present?
+    # @meals = @meals.where(category: params[:category]) if params[:category].present?
   end
+
+
 end

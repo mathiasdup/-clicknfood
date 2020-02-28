@@ -90,7 +90,7 @@ file_ch = URI.open('https://images.pexels.com/photos/3734026/pexels-photo-373402
     name: "Chocolate cake",
     description: "Delicious chocolate cake and mousse, it is heaven for you tongue!",
     price: 5,
-    location: "Dijon",
+    location: "lyon",
     category: "french",
     quantity: 1,
     user: kevcha
@@ -123,6 +123,19 @@ file_pi = URI.open('https://images.pexels.com/photos/2619967/pexels-photo-261996
   )
   pizza.photo.attach(io: file_pi, filename: 'pizza.jpg', content_type: 'image/jpg')
   pizza.save!
+
+  file_piv = URI.open('https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?cs=srgb&dl=aliments-croute-dejeuner-delicieux-2619967.jpg&fm=jpg')
+ pizzav = Meal.new(
+    name: "Vegan Pizza",
+    description: "Delicious tomato and mozzarella pizza",
+    price: 20,
+    location: "lyon",
+    category: "italian",
+    quantity: 6,
+    user: kevcha
+  )
+  pizzav.photo.attach(io: file_piv, filename: 'pizzav.jpg', content_type: 'image/jpg')
+  pizzav.save!
 
 
 
