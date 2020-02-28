@@ -1,88 +1,70 @@
- <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-6">
-        <h2>My prepared meals</h2>
-      </div>
-      <div class="col-4">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-6">
-        <div class= "container-cards  justify-content-start">
-          <% @user.meals.each do |meal| %>
-          <div class="card-trip">
-            <% if meal.photo.attached? %>
-            <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <div class="card-trip-infos" id="cardpaddingprofil">
-              <div>
-                <h2><%= meal.name %></h2>
-                <p><%= meal.category %></p>
-                <p>Quantity:&ensp;<strong><%= meal.quantity %></strong></p>
-              </div>
-              <div>
-                <h3><%= meal.price %>€</h3>
-              </div>
-            </div>
-          </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card pmd-card text-center border-0">
-          <div class="card-body">
-            <%= cl_image_tag user_avatar(current_user, 350), height: 150, width: 150, crop: :fill, class: "rounded-circle img-fluid mb-3" %>
-            <h2 class="card-title">My infos</h2>
-            <p><strong>My username:</strong>&ensp;<%= @user.username %></p>
-            <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
-            <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
-            <%= link_to edit_user_registration_path(@user) do %>
-            <p>Edit my profile</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<div class="profile-container">
+<div class="card-body">
+  <div class="card">
+    <%= cl_image_tag user_avatar(current_user, 350), height: 150, width: 150, crop: :fill, class: "avatar-profile" %>
+    <h4><%= @user.username %></h4>
+    <hr>
+    <h2 class="card-title">My infos</h2>
+    <div class="profile-content">
+      <p><strong>My address:<br></strong>&ensp;<%= @user.address %></p>
+      <p><strong>My email:<br></strong>&ensp;<%= @user.email %></p>
+      <%= link_to edit_user_registration_path(@user) do %>
+      <p>Edit my profile</p>
+      <% end %>
     </div>
   </div>
+</div>
 
-
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
+<h2 class="title meal">My prepared meals</h2>
+<div class="right-side">
+<div class= "container-cards-profile">
+  <% @user.meals.each do |meal| %>
+    <div class="card-trip">
+      <%= link_to meal do %>
+      <% if meal.photo.attached? %>
+      <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div class="card-trip-infos" id="cardpaddingprofil">
+        <div>
+          <h2><%= meal.name %></h2>
+          <p><%= meal.category %></p>
+          <p>Quantity:&ensp;<strong><%= meal.quantity %></strong></p>
+        </div>
+        <div>
+          <h3><%= meal.price %>€</h3>
+        </div>
+        <% end %>
       </div>
-      <div class="col-7">
+    </div>
+  <% end %>
+</div>
+</div>
 
-        <h2>My orders</h2>
-        <% @user.orders.each do |order| %>
-        <div class="card-product">
-          <% if order.meal.photo.attached? %>
-          <%= cl_image_tag order.meal.photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-          <div class="card-content">
-
-            <h3><%= order.meal.name %></h3>
-            <p>Category:&ensp;<strong><%= order.meal.category %></strong></p>
-            <p>Quantity:&ensp;<strong><%= order.meal.quantity %></strong></p>
-            <p>Location:&ensp;<strong><%= order.meal.location %></strong></p>
-            <div class="d-flex justify-content-between">
-              <p>Price:&ensp;<strong><%= order.meal.price %>€</strong></p>
-              <%= link_to order do %>
-              <p id="paraflink">Show Recap</p>
-              <% end %>
-              <%= link_to new_user_review_path(@user) do %>
-              <p id="paraflink">Add a review</p>
-              <% end %>
-            </div>
-          </div>
-       </div>
-       <% end %>
-     </div>
-   </div>
-   <div class="col-3">
-   </div>
- </div>
+<h2 class="title order">My orders</h2>
+<div class="order-grid">
+<!-- <div class="order-card"> -->
+<% @user.orders.each do |order| %>
+<div class="card-product">
+  <% if order.meal.photo.attached? %>
+  <%= cl_image_tag order.meal.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <div class="card-content">
+    <h3><%= order.meal.name %></h3>
+    <p>Category:&ensp;<strong><%= order.meal.category %></strong></p>
+    <p>Quantity:&ensp;<strong><%= order.meal.quantity %></strong></p>
+    <p>Location:&ensp;<strong><%= order.meal.location %></strong></p>
+    <div class="d-flex justify-content-between">
+      <p>Price:&ensp;<strong><%= order.meal.price %>€</strong></p>
+      <%= link_to order do %>
+      <p id="paraflink">Show Recap</p>
+      <% end %>
+      <%= link_to new_user_review_path(@user) do %>
+      <p id="paraflink">Add a review</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+<!-- </div> -->
+</div>
+</div>
