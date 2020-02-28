@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :reviews
-  has_many :orders
-  has_many :meals
+  has_many :reviews, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  has_many :meals, dependent: :destroy
   has_one_attached :avatar
 
   validates :username, presence: true, uniqueness: true
@@ -10,4 +10,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def avg_ratings
+   reviews.average(:rating).round(2) if reviews.any?
+  end
 end

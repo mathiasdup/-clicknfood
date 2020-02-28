@@ -1,7 +1,7 @@
 class Meal < ApplicationRecord
   include AlgoliaSearch
 
-  has_many :orders
+  has_many :orders, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
 
