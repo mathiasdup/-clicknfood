@@ -1,7 +1,8 @@
 .global {
   display: flex;
-  width: 60%;
-  height: 60%;
+  flex-direction: column;
+  width: 50%;
+  height: 83%;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
@@ -9,66 +10,78 @@
 
 .half-one {
   background-color: #FFF;
-  width: 50%;
+  height: 40%;
+  width: 100%;
   text-align: center;
 
 }
 
 .half-two {
   line-height: 2;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: #FFF;
-  width: 50%;
+  height: 50%;
+  width: 100%;
 
 }
 
 .totale {
   display: flex;
   width: 100vw;
-  height: 85vh;
+  height: 90.5%;
   justify-content: center;
   align-items: center;
+  background-color: #FFF;
 }
 
 .meal-picture {
-  height: 70%;
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+  height: 100%;
+  width: 100%;
+}
+
+.meal-picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .cooker {
-  padding-left: 20px;
-  padding-right: 30px;
-  padding-top: 18px;
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
-  justify-content: space-between;
-  height: 50%;
+  margin-top: 0px;
+  height: 15%;
   width: 100%;
-  p {
-    padding-top: 45px;
-  }
+  background-color: #FFF;
+  justify-content: space-around;
+  align-items: center;
 }
+
 
 #avatar {
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 25px;
+  margin-top: 20px;
+}
+
+.cooker p {
+  padding-top: 45px;
+  font-size: 1.5em;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 .loc-price {
-  margin-top: 35px;
   display: flex;
   justify-content: space-between;
   align-items: end;
 }
 
 .btns {
-  margin-top: 45px;
+  margin-top: 1%;
   margin-right: 15px;
   margin-left: 15px;
   display: flex;
@@ -78,7 +91,7 @@
 .btn-ghost {
   color: #EF2D56;
   border: 1px solid #EF2D56;
-  padding: 2px 6px;
+  padding: 3px 7px;
   border-radius: 5px;
   font-weight: bold;
   opacity: 1;

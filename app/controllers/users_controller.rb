@@ -5,10 +5,11 @@ class UsersController < ApplicationController
     authorize @user
     @review = Review.new
   end
- private
 
- def set_review
-  @review = Review.find(params[:user_id])
- end
+private
+
+  def set_review
+    @review = Review.find(params[:user_id])
+  end
 
 end

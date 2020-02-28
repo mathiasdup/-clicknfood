@@ -18,14 +18,15 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-// NE PAS TOUCHER AU DESSUS /GEM DEVISE/ MATHIAS
+// NE PAS TOUCHER AU DESSUS /GEM SIMPLEFORM/ MATHIAS
 
 .send-button{
 background: #EF2D56;
-width:100%;
+width:40% !important;
 font-weight: 600;
 color:#fff;
 padding: 8px 25px;
+border-radius: 5px;
 
 &:hover {
 color:#fff;
@@ -38,8 +39,21 @@ padding: 8px 10px;
 transition: border .1s linear;
 border:none;
 border-radius: 5px;
+color: #6C757D;
+text-align: left;
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
 &:focus {
   box-shadow: 0 0 10px rgba(239, 45, 86, 0.4);
   }
+}
+
+.container-form{
+  margin: 10% auto;
+  width: 50%;
+}
+
+.container-formedit{
+  margin: 2% auto;
+  width: 50%;
 }
