@@ -46,17 +46,20 @@
 // }
 
 .search-bar-index{
-  width: 100%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
 }
 
 .search-input-index{
-  width: 70%;
+  width: 60%;
   height: 3em;
-  border-radius: 5px 0 0 5px;
-  padding-left: 1em;
+  // border-radius: 5px 0 0 5px;
+  padding-left: 0.5em;
+  color: #adadad;
   border: none;
   &:focus{
     outline: none;
@@ -64,7 +67,7 @@
 }
 
 .search-button-index{
-  border-radius: 0 5px 5px 0;
+  // border-radius: 0 5px 5px 0;
   height: 3em;
   width: 30%;
   border: none;
