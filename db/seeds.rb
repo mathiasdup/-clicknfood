@@ -106,7 +106,7 @@ file_ph = URI.open('https://images.pexels.com/photos/1001773/pexels-photo-100177
     location: "lyon",
     category: "viet",
     quantity: 2,
-    user: qwerty
+    user: benj
   )
   pho.photo.attach(io: file_ph, filename: 'pho.jpg', content_type: 'image/jpg')
   pho.save!
@@ -119,7 +119,7 @@ file_pi = URI.open('https://images.pexels.com/photos/2619967/pexels-photo-261996
     location: "Milano",
     category: "italian",
     quantity: 6,
-    user: azerty
+    user: benj
   )
   pizza.photo.attach(io: file_pi, filename: 'pizza.jpg', content_type: 'image/jpg')
   pizza.save!
@@ -134,7 +134,7 @@ file_pi = URI.open('https://images.pexels.com/photos/2619967/pexels-photo-261996
   order_sushi_qwerty.save!
 
 
-  puts "createing reviews...."
+  puts "creating reviews...."
 
 
   Review.create!({

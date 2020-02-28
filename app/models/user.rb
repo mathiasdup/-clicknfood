@@ -11,4 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def avg_ratings
+   reviews.average(:rating).round(2) if reviews.any?
+  end
 end

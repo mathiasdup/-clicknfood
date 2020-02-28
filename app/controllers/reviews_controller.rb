@@ -26,10 +26,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-   def avg_ratings
-    @show_reviews = reviews.average(:rating).round(2) if reviews.any?
-  end
-
 private
 
   def review_params
