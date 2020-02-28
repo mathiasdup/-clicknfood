@@ -320,7 +320,7 @@ file_pi = URI.open('https://assets.afcdn.com/recipe/20171206/75873_w648h414c1cx2
   tab.photo.attach(io: file_tab, filename: 'tab.jpg', content_type: 'image/jpg')
   tab.save!
 
-  file_humus = URI.open('https://assets.afcdn.com/recipe/20170905/71705_w648h414c1cx1411cy4176cxt0cyt0cxb3999cyb6000.jpg')
+  file_humus = URI.open('https://img-3.journaldesfemmes.fr/Wqkf0RY_ezPUYtsiKn_CY_uq0oE=/750x/smart/image-icu/10018957_2128600701.jpg')
  humus = Meal.new(
     name: "Hummus",
     description: "Hummus with chickpeas, mild and sweet",
