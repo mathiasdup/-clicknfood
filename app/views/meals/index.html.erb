@@ -9,7 +9,7 @@
 <!--City -->
 <%= form_with url: meals_path, local: true, method: :get do |form| %>
       <div class="search-bar-index">
-        <%= form.text_field :location, class:"search-input-index", placeholder: "Change your city" %>
+        <%= form.text_field :location, class:"search-input-index", placeholder: "New city" %>
         <%= form.submit class:"search-button-index", value:"Search"%>
       </div>
     <% end %>
