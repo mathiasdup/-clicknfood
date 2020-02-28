@@ -335,7 +335,7 @@ file_pi = URI.open('https://assets.afcdn.com/recipe/20171206/75873_w648h414c1cx2
 
     file_buffet = URI.open('https://www.lesgrandsbuffets.com/sites/lesgrandsbuffets.com/files/styles/content_slider_mobile/public/field/page/content_img_mobile/rotisserie.jpg?itok=dlfJgqNw')
  buffet = Meal.new(
-    name: "Grands buffets de Narbonne",
+    name: "Grands buffets",
     description: "Buffet semi gastro à volonté, A PROGRAMMER !",
     price: 39,
     location: "narbonne",
