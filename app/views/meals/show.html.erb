@@ -4,16 +4,19 @@
 
       <div class="meal-picture">
         <% if @meal.photo.attached? %>
-        <%= cl_image_tag @meal.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @meal.photo.key, crop: :fill %>
         <% end %>
       </div>
 
-      <div class="cooker">
-      <%= cl_image_tag user_avatar(@meal.user, 350), height: 70, width: 70, crop: :fill, id: "avatar" %>
-        <p>Your meal will be cooked by <%= @meal.user.username.capitalize %></p>
-      </div>
-
     </div>
+
+    <div class="cooker">
+      <%= cl_image_tag user_avatar(@meal.user, 350), height: 100, width: 100, crop: :fill, id: "avatar" %>
+      <p>This meal will be cooked by <%= @meal.user.username.capitalize %></p>
+      <h2><%= @show_reviews %></h2>
+    </div>
+
+
 
     <div class= "half-two">
       <h1><%= @meal.name.capitalize %></h1>
@@ -26,17 +29,13 @@
       </div>
 
       <div class="btns">
+        <%= form_with url: meal_orders_path(@meal), local: true, method: :post do |form| %>
+        <p><%= form.submit "Order this meal", class: "btn-ghost", name:"Order this meal" %></p>
+        <% end %>
 
-          <%= link_to request.referer do %>
-          <p class="btn-ghost">Back to the list</p>
-          <% end %>
-
-
-          <%= form_with url: meal_orders_path(@meal), local: true, method: :post do |form| %>
-          <p><%= form.submit "Order this meal", class: "btn-ghost", name:"Order this meal" %></p>
-          <% end %>
-
-
+        <%= link_to request.referer do %>
+        <p class="btn-ghost">Back to the list</p>
+        <% end %>
       </div>
 
     </div>

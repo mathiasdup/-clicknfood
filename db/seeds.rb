@@ -132,4 +132,35 @@ file_pi = URI.open('https://images.pexels.com/photos/2619967/pexels-photo-261996
     meal: sushi
   )
   order_sushi_qwerty.save!
+
+
+  puts "createing reviews...."
+
+
+  Review.create!({
+    user: benj,
+    content: 'trop cool',
+    rating: 5
+  })
+
+  Review.create!({
+    user: jojo,
+    content: 'bof bof',
+    rating: 3
+  })
+
+  Review.create!({
+    user: benj,
+    content: 'bif bof',
+    rating: 3
+  })
+
+  Review.create!({
+    user: benj,
+    content: 'pas mal du tout',
+    rating: 5
+  })
+
+
+
 puts 'Finished!'
