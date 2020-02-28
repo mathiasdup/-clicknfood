@@ -8,25 +8,27 @@
 
 <!--City -->
 <%= form_with url: meals_path, local: true, method: :get do |form| %>
-      <div class="search-bar">
-        <%= form.text_field :location, class:"search-input", placeholder: "Change your city" %>
-        <%= form.submit class:"search-button", value:"Search"%>
+      <div class="search-bar-index">
+        <%= form.text_field :location, class:"search-input-index", placeholder: "Change your city" %>
+        <%= form.submit class:"search-button-index", value:"Search"%>
       </div>
     <% end %>
-
-<!--Category -->
-<br>
-
-
-    <br>
-    <% Meal::CATEGORIES.each_with_index do |category, i| %>
-      <label for="category_<%= i %>"><%= category %></label>
-      <input name="category[]" type="checkbox" id="category_<%= i %>" value="<%= category %>">
-    <% end %>
-
-
-  <hr>
-
+    <div class="container-checkbox">
+      <ul class="ks-cboxtags">
+      <% Meal::CATEGORIES.each_with_index do |category, i| %>
+      <!-- <li>
+        <input type="checkbox" id="checkboxOne" value="Rainbow Dash">
+        <label for="checkboxOne">Rainbow Dash</label>
+      </li> -->
+      <!-- <div class="checkbox-button"> -->
+        <li>
+        <input name="category[]" type="checkbox" id="category_<%= i %>" value="<%= category %>">
+        <label for="category_<%= i %>"><%= category %></label>
+        </li>
+      <!-- </div> -->
+        <% end %>
+      </ul>
+    </div>
 </div>
 
 
