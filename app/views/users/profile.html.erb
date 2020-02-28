@@ -5,11 +5,13 @@
     <h4><%= @user.username %></h4>
     <hr>
     <h2 class="card-title">My infos</h2>
-    <p><strong>My address:</strong>&ensp;<%= @user.address %></p>
-    <p><strong>My email:</strong>&ensp;<%= @user.email %></p>
-    <%= link_to edit_user_registration_path(@user) do %>
-    <p>Edit my profile</p>
-    <% end %>
+    <div class="profile-content">
+      <p><strong>My address:<br></strong>&ensp;<%= @user.address %></p>
+      <p><strong>My email:<br></strong>&ensp;<%= @user.email %></p>
+      <%= link_to edit_user_registration_path(@user) do %>
+      <p>Edit my profile</p>
+      <% end %>
+    </div>
   </div>
 </div>
 
