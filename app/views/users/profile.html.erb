@@ -39,7 +39,8 @@
 </div>
 
 <h2 class="title order">My orders</h2>
-<div class="order-card">
+<div class="order-grid">
+<!-- <div class="order-card"> -->
 <% @user.orders.each do |order| %>
 <div class="card-product">
   <% if order.meal.photo.attached? %>
@@ -62,5 +63,6 @@
   </div>
 </div>
 <% end %>
+<!-- </div> -->
 </div>
 </div>

@@ -46,7 +46,6 @@
     width: 100%;
   }
 }
-
 .full-container{
   display: grid;
   width: 100%;
@@ -60,13 +59,30 @@
 .profile-container{
   display: grid;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   grid-template-columns: 2fr 8fr;
   grid-template-rows: 2fr 3fr 2fr 5fr;
+  grid-auto-rows: min-content;
   grid-column-gap: 10px;
   grid-row-gap: 15px;
 }
 
+.order-grid{
+  display: grid;
+  // margin: 0 auto 5% 5%;
+  width: 100%;
+  // height: 100%;
+  // margin-bottom: 10%;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+  grid-column-gap: 3%;
+  grid-row-gap: 5%;
+}
 .right-side{
   width: 100%;
   grid-column-start: 2;
