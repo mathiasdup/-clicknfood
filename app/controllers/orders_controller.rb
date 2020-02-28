@@ -15,7 +15,8 @@ before_action :set_order, only: [:show]
     authorize @order
     @order.save
       if @order.save
-        redirect_to order_path(@order)
+        flash[:notice] = "Yay! 🎉 Thanks for your orders !!"
+        redirect_to profile_path
       else
         @order.errors.full_messages
       render :new

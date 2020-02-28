@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     authorize @review
     @review.save
     if @review.save
-      redirect_to profile_path, notice: 'Thank you for your review !'
+      redirect_to profile_path, notice: '👍 Thank you for your reviews !!'
     else
       render :profile
     end
