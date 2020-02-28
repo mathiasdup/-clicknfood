@@ -1,6 +1,8 @@
 .card-product {
   overflow: hidden;
   height: 200px;
+  width: 70%;
+  margin: 0 auto 0 5%;
   background: white;
   display: flex;
   align-items: center;
@@ -29,4 +31,20 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.title{
+  align-self: end;
+}
+.meal{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.order{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
 }

@@ -31,7 +31,7 @@
 
 
 select{
-  width: 90%;
+  width: 100%;
   margin: 10% auto;
   border-radius: 5px;
   border: none;
@@ -46,7 +46,7 @@ select{
 }
 
 .search-bar-index{
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -76,7 +76,13 @@ select{
   }
 }
 
-.form-index{
+.algolia-form{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 0 20%;
+}
+
+.home{
+  padding: 0;
 }
