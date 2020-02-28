@@ -1,7 +1,8 @@
 class Meal < ApplicationRecord
   include AlgoliaSearch
-
-  CATEGORIES = %w(french chinese mexican viet japanese italian indian lebanese)
+  
+  CATEGORIES = %w(french chinese mexican japanese italian indian lebanese vietnamese)
+  
   has_many :orders, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
