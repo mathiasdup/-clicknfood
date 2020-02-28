@@ -57,3 +57,12 @@ box-shadow: 0 0 15px rgba(0,0,0,0.1);
   margin: 2% auto;
   width: 50%;
 }
+
+.rose{
+  background-color: #EF2D56;
+  border: none;
+
+&:hover {
+  background-color: #EF2D56;
+  }
+}
