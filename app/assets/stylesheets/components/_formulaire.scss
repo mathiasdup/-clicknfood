@@ -40,6 +40,8 @@ transition: border .1s linear;
 border:none;
 border-radius: 5px;
 color: #6C757D;
+text-align: left;
+box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
 &:focus {
   box-shadow: 0 0 10px rgba(239, 45, 86, 0.4);
