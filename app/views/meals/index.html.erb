@@ -1,14 +1,37 @@
+<script type="text/javascript">
+      window.algolia_application_id = '<%= ENV['ALGOLIA_APPLICATION_ID'] %>'
+      window.algolia_search_only_api_key = '<%= ENV['ALGOLIA_SO_API_KEY'] %>';
+    </script>
 
 <div class="full-container">
   <div class="left-menu">
-  <%= form_with url: meals_path, html: {class: "algolia-form"}, local: true, method: :get do |form| %>
-  <div class="search-bar-index">
-    <%= form.text_field :location, class:"search-input" %>
-    <%= form.submit class:"search-button", value:"Search" %>
-  </div>
-    <%= form.select :category, ["french", "chinese", "mexican", "japanese", "italian", "indian", "lebanese", "viet"] %>
+
+<!--City -->
+<%= form_with url: meals_path, local: true, method: :get do |form| %>
+      <div class="search-bar">
+        <%= form.text_field :location, class:"search-input", placeholder: "Change your city" %>
+        <%= form.submit class:"search-button", value:"Search"%>
+      </div>
     <% end %>
+
+<!--Category -->
+<br>
+
+
+    <br>
+    <% Meal::CATEGORIES.each_with_index do |category, i| %>
+      <label for="category_<%= i %>"><%= category %></label>
+      <input name="category[]" type="checkbox" id="category_<%= i %>" value="<%= category %>">
+    <% end %>
+
+
+  <hr>
+
 </div>
+
+
+
+
 <% if @meals.present? %>
 <h1 class="city">All meals in <%= @meals.first.location.capitalize %> :</h1>
 <div class="right-side">
